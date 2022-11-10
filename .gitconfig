@@ -1,0 +1,10 @@
+
+# [includeIf "gitdir:~/dev/planet/planet-home/"]
+# #   path = .gitconfig-planet-home
+# [user]
+# name = Soliman Faragy
+# email = soliman.faragy@lifullconnect.com
+
+# [core]
+# sshCommand = ssh -i ~/.ssh/id_rsa_planet_home_new
+
