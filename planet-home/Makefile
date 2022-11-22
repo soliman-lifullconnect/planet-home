@@ -1,4 +1,4 @@
-.PHONY: build stop start restart logs logs-app app-login db-login migrate keygenerate serve
+.PHONY: build stop start restart logs logs-app app-login db-login migrate keygenerate serve npm_dev
 
 # 1. Build your system before anything make
 build: stop 
@@ -35,7 +35,12 @@ migrate:
 # 3. After migrate do this make before anything else
 keygenerate:
 	docker-compose exec app php artisan key:generate
+
 # 4. serve project
 serve:
-	docker-compose run app php artisan serve
+	docker-compose run app php artisan serve	
+
+# 
+npm_dev:
+	docker-compose run app npm run dev
 
