@@ -1,4 +1,4 @@
-.PHONY: build stop start restart logs logs-app app-login db-login server-login migrate keygenerate serve
+.PHONY: build stop start restart logs logs-app app-login db-login migrate keygenerate serve
 
 # 1. Build your system before anything make
 build: stop 
@@ -22,13 +22,11 @@ logs-app:
 	docker-compose -f docker-compose.yml app storage/logs --tail=10 -f app
 
 app-login:
-	docker exec -it app /bin/bash
+	docker exec -it planet-home_app_1 /bin/bash
 
 db-login:
-	docker exec -it planet-home_mariadb_1 mysql -ularavel -p"laravel"
+	docker exec -it planet-home_mariadb_1 mysql -hmariadb -ularavel -plaravel
 
-server-login:
-	docker exec -it twoeyewear-nginx /bin/bash
 
 # 3. First do the migrate before anything
 migrate:
