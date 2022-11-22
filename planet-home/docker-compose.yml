@@ -11,13 +11,13 @@ services:
   myapp:
     image: docker.io/bitnami/laravel:9
     ports:
-      - '8000:8000'
+      - '8001:8001'
     environment:
       - DB_HOST=mariadb
       - DB_PORT=3306
       - DB_USERNAME=bn_myapp
       - DB_DATABASE=bitnami_myapp
     volumes:
-      - './my-project:/app'
+      - './:/app'
     depends_on:
       - mariadb
